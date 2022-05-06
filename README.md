@@ -33,6 +33,12 @@ Run `composer install`
 Please note that if using docker, this project comes with Laravel Sail configured.
 So prefix all commands with `./vendor/bin/sail`. E.g `./vendor/bin/sail php artisan migrate`
 
+Run `php artisan key:generate`
+
+Confirm your database connection credentials and update your `.env` file accordingly
+
+If you want to use redis or memcached as your cache server, confirm the credentials and update `.env` file accordingly 
+
 Run `php artisan migrate` to run the migrations
 
 Place the `customers.csv` file in the `./storage/app/` directory
