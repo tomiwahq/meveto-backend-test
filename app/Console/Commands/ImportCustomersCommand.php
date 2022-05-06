@@ -40,6 +40,17 @@ class ImportCustomersCommand extends Command
     public function handle()
     {
         $open = fopen(storage_path('app/customers.csv'), 'r');
+
+        if ($open == false) {
+            $this->error(
+                sprintf(
+                    "customers.csv file not found. Ensure this file has been properly placed in the %s directory",
+                    storage_path('app/')
+                )
+            );
+            return self::FAILURE;
+        }
+
         $count = 0;
 
         while (($data = fgetcsv($open, 1000, ",")) !== FALSE) {
