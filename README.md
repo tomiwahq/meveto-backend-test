@@ -28,10 +28,10 @@ GOOGLE_MAPS_API_URL=https://maps.googleapis.com/maps/api/geocode/json
 GOOGLE_MAPS_API_KEY=your_google_maps_geocoding_api_key
 ```
 
+Run `composer install`
+
 Please note that if using docker, this project comes with Laravel Sail configured.
 So prefix all commands with `./vendor/bin/sail`. E.g `./vendor/bin/sail php artisan migrate`
-
-Run `composer install`
 
 Run `php artisan migrate` to run the migrations
 
