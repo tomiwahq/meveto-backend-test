@@ -14,6 +14,7 @@ Built with Laravel
 
 ### Installation
 Simply clone this repo.
+`git clone https://github.com/tomiwahq/meveto-backend-test.git`
 
 Create a `.env` file using the `.env.example` file supplied with this repo.
 Fill in your credentials appropriately.
