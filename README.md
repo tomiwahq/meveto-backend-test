@@ -31,7 +31,10 @@ GOOGLE_MAPS_API_KEY=your_google_maps_geocoding_api_key
 Run `composer install`
 
 Please note that if using docker, this project comes with Laravel Sail configured.
-So prefix all commands with `./vendor/bin/sail`. E.g `./vendor/bin/sail php artisan migrate`
+
+So run `./vendor/bin/sail up` or `./vendor/bin/sail up -d` to run in the background
+
+Then prefix all commands with `./vendor/bin/sail`. E.g `./vendor/bin/sail php artisan migrate`
 
 Run `php artisan key:generate`
 
@@ -45,9 +48,7 @@ Place the `customers.csv` file in the `./storage/app/` directory
 
 Run `php artisan customers:import` to import the customers.
 
-Serve the application in your preferred way.
-
-If using docker via Sail, run `./vendor/bin/sail up`
+Serve the application in your preferred way if not serving via sail/docker.
 
 ### Usage
 To list all customers, visit https://your_app_url/api/customers
@@ -55,3 +56,11 @@ Please note the results are paginated.
 Each page is limited to 50 results, to see results of other pages, simply append `?page=page_num` to the request URI
 
 To see a single customer, visit https://your_app_url/api/customers/:customer_id
+
+### Tests 
+To run tests
+`php artisan test`
+
+or 
+
+`./vendor/bin/sail php artisan test` if using docker via sail
