@@ -17,7 +17,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return response()->json((new CustomerCollection(Customer::paginate(50)))->response()->getData(), Response::HTTP_OK);
+        return response()->json(
+            (new CustomerCollection(Customer::paginate(50)))->response()->getData(),
+            Response::HTTP_OK
+        );
     }
 
     /**
@@ -28,6 +31,9 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        return response()->json(new CustomerResource($customer), Response::HTTP_OK);
+        return response()->json(
+            new CustomerResource($customer),
+            Response::HTTP_OK
+        );
     }
 }

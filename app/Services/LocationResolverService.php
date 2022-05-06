@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Log;
 
 class LocationResolverService
 {
-    private string $locUrl = "https://maps.googleapis.com/maps/api/geocode/json";
-
     /**
      * @param string $cityName
      * @return string[]
@@ -31,7 +29,7 @@ class LocationResolverService
             "address" => $cityName,
             "key" => Config::get("app.google_maps_api_key"),
         ]);
-        $response = Http::post($this->locUrl . "?" . $query)->json();
+        $response = Http::post(Config::get("app.google_maps_api_url") . "?" . $query)->json();
         try {
             return $response["results"][0]["geometry"]["location"];
         } catch (\Exception $exception) {
